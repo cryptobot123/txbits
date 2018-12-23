@@ -1,0 +1,8 @@
+@(token: String, url: String)(implicit messages: Messages)
+@Messages("mails.greeting")
+
+@Messages("mails.sendSignUpEmail.body")
+
+@url
+
+@_footer()

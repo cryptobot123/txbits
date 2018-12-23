@@ -1,0 +1,12 @@
+@(error:Throwable)(implicit request: RequestHeader, messages: Messages)
+
+@scripts = {
+}
+
+@content._chrome(Messages("chrome.exchange.navigation.exchange.title"), scripts) {
+    <div class="container" role="main">
+        <div class="row-fluid">
+            @Messages("metaerrors.servererror") @error.getMessage
+        </div>
+    </div>
+}

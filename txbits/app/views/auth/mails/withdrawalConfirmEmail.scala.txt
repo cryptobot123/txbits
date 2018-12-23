@@ -1,0 +1,12 @@
+@(email: String, amount: String, currency: String, destination: String, id: Long, token: String, url_confirm: String, url_reject: String)(implicit messages: Messages)
+@Messages("mails.greeting")
+
+@Messages("mails.sendWithdrawalConfirmEmail.body.confirm")
+
+@url_confirm
+
+@Messages("mails.sendWithdrawalConfirmEmail.body.reject")
+
+@url_reject
+
+@_footer()

@@ -1,0 +1,109 @@
+# Flame.Exchange - An open source Bitcoin and crypto currency exchange
+# Copyright (C) 2014-2015  Viktor Stanchev & Kirk Zathey
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                          controllers.Application.index
+GET         /messages.js                               controllers.Application.jsMessages
+
+# Exchange pages
+GET         /dashboard                                 controllers.Application.dashboard
+GET         /exchange                                  controllers.Application.exchange
+GET         /depositwithdraw                           controllers.Application.depositwithdraw
+GET         /history                                   controllers.Application.history
+GET         /account                                   controllers.Application.account
+GET         /withdrawal_confirm/:id/:token             controllers.WithdrawalConfirmation.confirm(id, token)
+GET         /withdrawal_reject/:id/:token              controllers.WithdrawalConfirmation.reject(id, token)
+
+# This is our ticker API which should be completely separable from our main one
+# This api uses no authentication
+GET         /api/1/ticker                               controllers.StatsAPI.APIv1.ticker
+GET         /api/1/chart/:base/:counter                 controllers.StatsAPI.APIv1.chart(base, counter)
+
+# Route for changing the language cookie
+GET         /chlang/:lang                              controllers.Application.chlang(lang)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                              controllers.Assets.at(path="/public", file)
+
+# API key actions
+POST        /api/1/bid                                  controllers.API.APIv1.bid
+POST        /api/1/ask                                  controllers.API.APIv1.ask
+POST        /api/1/cancel                               controllers.API.APIv1.cancel
+POST        /api/1/pending_trades                       controllers.API.APIv1.pendingTrades
+POST        /api/1/trade_history                        controllers.API.APIv1.tradeHistory
+POST        /api/1/balance                              controllers.API.APIv1.balance
+
+# APIv1
+GET         /iapi/1                                     controllers.IAPI.APIv1.index
+GET         /iapi/1/trade_fees                          controllers.IAPI.APIv1.tradeFees
+GET         /iapi/1/balance                             controllers.IAPI.APIv1.balance
+GET         /iapi/1/dw_fees                             controllers.IAPI.APIv1.dwFees
+GET         /iapi/1/dw_limits                           controllers.IAPI.APIv1.dwLimits
+GET         /iapi/1/required_confirms                   controllers.IAPI.APIv1.requiredConfirms
+POST        /iapi/1/bid                                 controllers.IAPI.APIv1.bid
+POST        /iapi/1/ask                                 controllers.IAPI.APIv1.ask
+POST        /iapi/1/cancel                              controllers.IAPI.APIv1.cancel
+POST        /iapi/1/withdraw                            controllers.IAPI.APIv1.withdraw
+GET         /iapi/1/pending_withdrawals_all             controllers.IAPI.APIv1.pendingWithdrawalsAll
+GET         /iapi/1/pending_deposits_all                controllers.IAPI.APIv1.pendingDepositsAll
+GET         /iapi/1/deposit_crypto_all                  controllers.IAPI.APIv1.depositCryptoAll
+GET         /iapi/1/deposit_crypto/:currency            controllers.IAPI.APIv1.depositCrypto(currency)
+GET         /iapi/1/pairs                               controllers.IAPI.APIv1.pairs
+GET         /iapi/1/currencies                          controllers.IAPI.APIv1.currencies
+GET         /api/1/open_trades/:first/:second           controllers.API.APIv1.openTrades(first, second)
+GET         /api/1/recent_trades/:first/:second         controllers.API.APIv1.recentTrades(first, second)
+GET         /iapi/1/deposit_withdraw_history            controllers.IAPI.APIv1.depositWithdrawHistory
+GET         /iapi/1/trade_history                       controllers.IAPI.APIv1.tradeHistory
+GET         /iapi/1/pending_trades                      controllers.IAPI.APIv1.pendingTrades
+GET         /iapi/1/login_history                       controllers.IAPI.APIv1.loginHistory
+GET         /iapi/1/user                                controllers.IAPI.APIv1.user
+POST        /iapi/1/turnoff_tfa                         controllers.IAPI.APIv1.turnOffTFA
+POST        /iapi/1/turnon_tfa                          controllers.IAPI.APIv1.turnOnTFA
+POST        /iapi/1/turnoff_emails                      controllers.IAPI.APIv1.turnOffEmails
+POST        /iapi/1/turnon_emails                       controllers.IAPI.APIv1.turnOnEmails
+POST        /iapi/1/gen_totp_secret                     controllers.IAPI.APIv1.genTOTPSecret
+POST        /iapi/1/remove_pgp                          controllers.IAPI.APIv1.removePgp
+POST        /iapi/1/add_pgp                             controllers.IAPI.APIv1.addPgp
+GET         /iapi/1/get_api_keys                        controllers.IAPI.APIv1.getApiKeys
+POST        /iapi/1/add_api_key                         controllers.IAPI.APIv1.addApiKey
+POST        /iapi/1/update_api_key                      controllers.IAPI.APIv1.updateApiKey
+POST        /iapi/1/disable_api_key                     controllers.IAPI.APIv1.disableApiKey
+
+# Login page
+GET         /login                                     controllers.LoginPage.login
+GET         /tfa_totp                                  controllers.LoginPage.tfaTOTP
+GET         /logout                                    controllers.LoginPage.logout
+
+# User Registration and password handling 
+GET         /signup                                    controllers.Registration.startSignUp
+POST        /signup                                    controllers.Registration.handleStartSignUp
+GET         /signup/:token                             controllers.Registration.signUp(token)
+POST        /signup/:token                             controllers.Registration.handleSignUp(token)
+GET         /reset                                     controllers.Registration.startResetPassword
+POST        /reset                                     controllers.Registration.handleStartResetPassword
+GET         /reset/:token                              controllers.Registration.resetPassword(token)
+POST        /reset/:token                              controllers.Registration.handleResetPassword(token)
+GET         /password                                  controllers.PasswordChange.page
+POST        /password                                  controllers.PasswordChange.handlePasswordChange
+
+# Providers entry points
+POST        /authenticate                              controllers.ProviderController.loginPost
+POST        /tfa                                       controllers.ProviderController.tfaPost
+GET         /not-authorized                            controllers.ProviderController.notAuthorized

@@ -1,0 +1,29 @@
+@(title: String, scripts: Html = Html(""), styles: Html = Html(""), loggedIn: Boolean = false)(content: Html)(implicit request: RequestHeader, messages: Messages)
+@import securesocial.core.UsernamePasswordProvider
+@import play.api.Play.current
+
+@navItem(url: String, title:String) = {
+@if(request.path==url) {
+    <li class="active">
+    } else {
+    <li>
+    }
+    <a href="@url" title="@title">
+        <span class="sidebar-text">
+            @title
+        </span>
+    </a>
+</li>
+}
+
+@extraScripts = {
+}
+
+@extraStyles = {
+}
+
+@_global_chrome(title, Html(scripts + extraScripts.body), Html(styles + extraStyles.body)) {
+
+
+    @content
+}

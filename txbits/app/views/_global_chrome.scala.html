@@ -1,0 +1,59 @@
+@(title: String, scripts: Html = Html(""), styles: Html = Html(""))(content: Html)(implicit request: RequestHeader, messages: Messages)
+@import securesocial.core.UsernamePasswordProvider
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("img/favicon-32px.png")">
+
+        @if(title == "") {
+            <title>Flame.Exchange</title>
+        } else {
+            <title>@title - Flame.Exchange</title>
+        }
+
+        <!-- bootstrap 3.0.2 -->
+        <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap theme -->
+        <link href="@routes.Assets.at("css/bootstrap-theme.css")" rel="stylesheet" type="text/css" />
+
+        <!-- non-theme styles -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/main.css")">
+
+        @styles
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="@routes.Assets.at("js/vendor/html5shiv.js")"></script>
+          <script src="@routes.Assets.at("js/vendor/respond.min.js")"></script>
+        <![endif]-->
+        
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115410360-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-115410360-2');
+        </script>
+    </head>
+    <body role="document">
+
+        @content
+
+        <script src="@routes.Assets.at("js/vendor/jquery-2.1.1.min.js")"></script>
+        <script src="@routes.Assets.at("js/vendor/jquery-migrate-1.2.1.min.js")"></script>
+        <script src="@routes.Assets.at("js/vendor/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.at("js/vendor/handlebars-v2.0.0.js")"></script>
+        <script src="@routes.Assets.at("js/common.js")"></script>
+        <script src="@routes.Assets.at("js/api1.js")"></script>
+        <script type="text/javascript" src="@routes.Application.jsMessages()"></script>
+        @scripts
+    </body>
+</html>

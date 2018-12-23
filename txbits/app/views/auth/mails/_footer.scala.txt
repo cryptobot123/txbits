@@ -1,0 +1,7 @@
+@()(implicit messages: Messages)
+
+@Messages("mails.signature.start")
+
+@Messages("mails.signature.from", play.api.Play.current.configuration.getString("application.name").get)
+
+@Messages("mails.signature.notice", play.api.Play.current.configuration.getString("application.name").get, play.api.Play.current.configuration.getString("email.security").get)

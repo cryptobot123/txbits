@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="./img/favicon-32px.png">
+
+            <title>Flame.Exchange</title>
+
+        <!-- bootstrap 3.0.2 -->
+        <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap theme -->
+        <link href="./css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+
+        <!-- non-theme styles -->
+        <link rel="stylesheet" media="screen" href="./css/main.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <body role="document" data-spy="scroll" data-target="#navspy">
+
+    <!-- Fixed navbar -->
+    <nav id="navspy" class="navbar navbar-exchange navbar-fixed-top" role="navigation">
+        <div class="container">
+
+
+                <div class="navbar-header">
+                        <!-- Sidebar toggle button-->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="./index.html#">
+                      <img src="./img/logo-50px.png" height="20px">
+                    </a>
+                </div>
+
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#goal-wrap">Goal</a></li>
+                        <li><a href="#ss-wrap">Screenshots</a></li>
+                        <li><a href="#release-wrap">Release Notes</a></li>
+                        <li><a href="#design-wrap">Design</a></li>
+                        <li><a href="#security-wrap">Security</a></li>
+                        <li><a href="#about-wrap">About Us</a></li>
+                        <li><a href="#contact-wrap">Contact Us</a></li>
+                        <li><a href="#license-wrap">License</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="font-weight:bold;"><a href="https://github.com/txbits/txbits">Fork us on github!</i></a></li>
+                    </ul>
+                </div>
+
+        </div>
+    </nav>
+
+    <div class="marketing">
+        <div class="jumbotron intro-image">
+            <div class="container">
+                <h1>Flame.Exchange</h1>
+                <p class="subtitle">An open source Bitcoin and crypto currency exchange</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="signup-wrap">
+                <div class="text-center">
+                    <h3>This project is no longer in active development.
+                    <p>Check out the screenshots below, our <a href="https://github.com/txbits/txbits/wiki/Security">security writeup</a> and our <a href="https://github.com/txbits/Flame.ExchangeDeployer">deployment scripts</a>.</p>
+                </div>
+            </div>
+
+            <div id="goal-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Our Goal</h2>
+                            <p>Flame.Exchange aims to be the first commercial-grade open source Bitcoin and crypto currency
+                            exchange. We hope to be able to leverage the power of open source to
+                            build the exchange with the <b>lowest fees</b>, <b>highest security</b>
+                            and greatest <b>transparency</b>. In case the .com/.org domains are confusing:
+                            We are following the WordPress model where .org is about the open source
+                            project and .com is one instance of it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ss-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Screenshots</h2>
+                            <img src="art/screenshots/1.png"/>
+                            <hr/>
+                            <img src="art/screenshots/2.png"/>
+                            <hr/>
+                            <img src="art/screenshots/3.png"/>
+                            <hr/>
+                            <img src="art/screenshots/4.png"/>
+                            <hr/>
+                            <img src="art/screenshots/5.png"/>
+                            <hr/>
+                            <img src="art/screenshots/6.png"/>
+                            <hr/>
+                            <img src="art/screenshots/7.png"/>
+                            <hr/>
+                            <img src="art/screenshots/8.png"/>
+                            <hr/>
+                            <img src="art/screenshots/9.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="release-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Release Notes</h2>
+                            <p>The most recent stable release is Flame.Exchange v0.2.0. Short list of new features compared
+                            to our initial preview release:</p>
+                            <ul>
+                              <li>Rewritten trading engine</li>
+                              <li>Multicolumn partial indexes on the database</li>
+                              <li>Removal of all database triggers</li>
+                              <li>Locked down database permissions for the frontend</li>
+                              <li>2FA recovery codes</li>
+                              <li>2FA verification is now on the database (frontend cannot authorize actions without a token)</li>
+                              <li>PGP encryption of emails</li>
+                              <li>API keys for automated trading</li>
+                              <li>Option to have asymmetric trading fees</li>
+                              <li>Pagination of account history using continuous scroll</li>
+                              <li>Many other bug fixes and improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="design-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Technical Design</h2>
+                            <p>Our stack is: <b>Scala</b>, <b>Play</b>, <b>PostgreSQL</b>, <b>Bitcoin Core</b> and <b>Litecoin Core</b>.
+                                The software can support other Bitcoin-based cryptocurrencies such as Peercoin and Primecoin. We are
+                                currently using <b>nginx</b> as our frontend webserver.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="security-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Security</h2>
+                            <p>We have taken a defense in depth approach to software design
+                                with security in mind. This means that it is possible
+                                to lock everything down to a very high degree so that if an attacker
+                                is able to get through one layer of defense, there will still be more
+                                before they can reach any funds.</p>
+                            <p>There are four main components:
+                                the frontend, the database, the wallet actor and the individual
+                                wallets (bitcoind, litecoind). The frontend does not have direct access
+                                to the wallets. Only the wallet actor does. The wallet actor periodically
+                                looks at the database and processes deposits and withdrawals. In the event
+                                of an attacker compromising the frontend, we (or whoever is hosting the exchange)
+                                will have the opportunity of
+                                detecting them and preventing them from stealing any coins. The frontend
+                                has very few permissions on the database, only the ability to run predefined
+                                "safe" functions, which further limits what an attacker can do.</p>
+                            <p>Our release includes automatic wallet backups and transfers to cold storage as well as a strong
+                                password policy, two factor authentication, and email confirmations with PGP encryption.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="about-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row">
+                        <div class="col-sm-12">
+                        <h2>About Us</h2>
+                        </div>
+                    </div>
+                    <div class="row detailed-points">
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img class="img-circle" width="300px" height="300px" src="./img/viktor.jpg">
+                                <div class="caption">
+                                    <h2>Viktor Stanchev</h2>
+                                    <p>Core Developer</p>
+                                    <p></p><a href="" id="viktor-email">Turn on javascript to show.</a></p>
+                                    <script>(function(){var at = String.fromCharCode(64);var e = "me"+at+"viktorstanchev.com"; var c = document.getElementById("viktor-email"); c.innerHTML = e; c.href = "mailto:"+e;})();</script>
+                                    <p><a href="http://viktor.land">http://viktor.land</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="thumbnail">
+                                <img class="img-circle" width="300px" height="300px" src="./img/kirk.jpg">
+                                <div class="caption">
+                                    <h2>Kirk Zathey</h2>
+                                    <p>Core Developer</p>
+                                     <p></p><a href="" id="kirk-email">Turn on javascript to show.</a></p>
+                                    <script>(function(){var at = String.fromCharCode(64);var e = "zathey"+at+"gmail.com"; var c = document.getElementById("kirk-email"); c.innerHTML = e; c.href = "mailto:"+e;})();</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Contact Us</h2>
+                            <p><a href="https://github.com/txbits">github</a>, <a href="https://www.reddit.com/r/txbits">reddit</a>, <a href="https://twitter.com/txbits">twitter</a>,
+                                <a href="" id="contact-email2">Turn on javascript to show email.</a>
+                                <script>(function(){var at = String.fromCharCode(64);var e = "contact"+at+"txbits.com"; var c = document.getElementById("contact-email2"); c.innerHTML = e; c.href = "mailto:"+e;})();</script>
+                            </p>
+                            <p>Use this PGP key to email us privately:</p>
+                            <pre>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v2
+
+mQENBFRImFcBCADZ/BPVBNbgaBn3xACTbZExBmh6Co50WnHeDYx6/ydcBW35C09g
+nVDdGNDP0mwpnHgvO9dlRFn/LS8YyUrF4Wl8tBOroyxdSbmWa9JUW/JOB305Oca1
+jXjKwGGA7CH6TGZW3k/Gp9JqMtInwzqyFWKOOTJDOdhJRCmn18NKwBx7qKnOgJhV
+fi9WC1+cSEcrw4bdEMTbVpFqY6IwJ8e/VDPj4BHqBrX868d1vjYrsgqBjmVoVkov
+ezZBTVj2hX70IPByA3sUhLfD9TBQoJFtw1cyymsXyod9Klk8/X4xszSBTEr0hQJh
+rlurUX9hWq6w9TptvvgrFKpTl87DoGrvLCbPABEBAAG0GlR4Qml0cyA8dHhiaXRz
+QHR4Yml0cy5jb20+iQE/BBMBAgApBQJUSJhXAhsDBQkB4TOABwsJCAcDAgEGFQgC
+CQoLBBYCAwECHgECF4AACgkQ58q7kss1ivb7XQf/Zgr7JXOsyniZDdLQ4ncyx+Y+
+oNAC4ylPCRHegj7t+NLBQ36pYk3f7zAYrocOPkVLsL/6MEWI9r25pCAHINlKXbWf
+DaFoIaK59Fot0HyXSCqJ//Ji7j4smoJ2U1+rQhvbziTC+n5B1aJBcGGaFuBnL0/V
+cjrunQT6J6gIJ9uivthyJ2dB7j5SGfKX5hli8ZrbqaHbNOfmCVlQahH5kTns04iV
+jp5erK5LdRIXP8mx2MsN+Ah4TUfYzyw5fkiwjcb95WEmRJScS1ooN0MtDguY0hFT
+hJfKI3Qy45swNWuodvOnvlmLtzGbZMa2nhR6uU9sUJpQLnw623Ls4KgZA0pVWbkB
+DQRUSJhXAQgAqLDKrlDomBLhFFX/elvsNGVMGK/0sE7KPlmHgJ1m1q4lEb5tdIRc
+PbwsFbo6viS+L48wKIL/hPQ50BuuMTO89aOBgUp0F3f9w0jYCLRU+jb0RYpH1JDW
+aAwmyt3A8ud1PC+o3RhMfSQPOy9KAPY1As0KPkMc3E8iN+fnrXAc4FSOaQ6pZEQb
+DX/n7dp1pupHE787C144OP4fTSXxEqhAIiYnFzPCgxezofxgUhHOHhgpkQdehXlT
+XMo46r9JBBlI6m1OeR0aK/HBv3MthH/lgqq2aZOaHw1fm1c5uNyloORITzlzkVeQ
+Y141L6W8du3f9xAEgqYiWTQ3wlPMNajv/QARAQABiQElBBgBAgAPBQJUSJhXAhsM
+BQkB4TOAAAoJEOfKu5LLNYr28PkH/A6EhxPS1mwI+5AD1MaX1xL9JhBaHSBzS0Jc
+7UKHrzBBI1oZiKqE6l7vX9DdAUNen8Ke71SJwJTKNdJqugMLqlgv2gZ6N5jXIMTD
+JHFlcTl87GfzfJQoOVRje21AhWDGDybMYa1rEpxCvu42R26yEqmIzzizPPU0jmkI
+WXAdlluGpXOTaVA5wTf1dhZ9lwXLcYHhTDMAVMdP5bWgOxkzWsWPeG3tMqe1wAEQ
+DSYkmWIz7t5GMaAk9soZDOnY6bbuvZLx2i/Vjg5R0HEKammUOuOi7QtGb6pk1jTe
+6dbx2kFXkqZtHQJ4qG9IQzHtHXhwo5HyOQiqSFyaj307atnqR18=
+=fTrx
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="license-wrap" class="linkable">
+                <div class="container" id="beta">
+                    <div class="row detailed-points">
+                        <div class="col-md-12">
+                            <h2>Open Source License</h2>
+                            <p>Flame.Exchange uses the AGPLv3 license, which means among other things that anyone who modifies the
+                                Flame.Exchange software has to provide any users of their service with a copy of the source code.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footerwrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <address>
+                                <strong>Flame.Exchange</strong><br>
+                                <a href="" id="contact-email">Turn on javascript to show email.</a>
+                                <script>(function(){var at = String.fromCharCode(64);var e = "contact"+at+"txbits.com"; var c = document.getElementById("contact-email"); c.innerHTML = e; c.href = "mailto:"+e;})();</script>
+                            </address>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="text-right">
+                            Copyright &copy; 2014-2015<br>
+                            All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="./js/vendor/jquery-2.1.1.min.js"></script>
+        <script src="./js/vendor/jquery-migrate-1.2.1.min.js"></script>
+        <script src="./js/vendor/bootstrap.min.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-54524343-2', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+
+</body>
+</html>

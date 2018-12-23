@@ -1,0 +1,9 @@
+@(email: String, url: String)(implicit messages: Messages)
+@import securesocial.core.UsernamePasswordProvider
+@Messages("mails.greeting")
+
+@Messages("mails.sendAlreadyRegisteredEmail.body")
+
+@url
+
+@_footer()
